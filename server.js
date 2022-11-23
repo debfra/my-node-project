@@ -1,13 +1,18 @@
-console.log("script loaded");
+// load express
+let express = require("express");
 
-let express = require("express"); //load express
+// create an app
+let app = express();
 
-let app = express(); //attiviamo express e messa in una variabile chiamata app
+// define the port where client files will be provided
+let port = 3000;
 
-let port = 3000; //numero standard per il port
+// start to listen to that port
+let server = app.listen(port);
 
-let server = app.listen(port); //express library chiamata app, attendere ciò che dice il port
+// print the link in the terminal
+console.log("running server on http://localhost:" + port);
 
+// provide static access to the files
+// in the "public" folder
 app.use(express.static("public"));
-
-console.log("running server on http://localhost:"+port)
